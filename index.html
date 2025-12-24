@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopware 6 Support & Entwicklung | Professionell & Kosteneffizient</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .photo-placeholder {
+            flex-shrink: 0;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: 600;
+            border: 4px solid #f8f9fa;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .header-text h1 {
+            font-size: 38px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+        
+        .header-text .subtitle {
+            font-size: 20px;
+            color: #6b7280;
+            font-weight: 400;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero .highlight {
+            color: #667eea;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            color: #4b5563;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: #667eea;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: #6b7280;
+            margin-top: 8px;
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .problem-card {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 24px;
+            border-radius: 8px;
+        }
+        
+        .problem-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #991b1b;
+            margin-bottom: 10px;
+        }
+        
+        .problem-card p {
+            color: #6b7280;
+            font-size: 16px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-top: 3px solid #667eea;
+        }
+        
+        .service-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+        
+        .service-card li {
+            color: #6b7280;
+            font-size: 15px;
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #059669;
+            font-weight: 600;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background: #f9fafb;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .benefit-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .benefit-card p {
+            color: #6b7280;
+            font-size: 15px;
+        }
+        
+        .benefit-card .savings {
+            color: #059669;
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 12px;
+            display: block;
+        }
+        
+        /* Comparison */
+        .comparison {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+        
+        .comparison-table {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .comparison-cell {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .comparison-row:nth-child(even) {
+            background: #f9fafb;
+        }
+        
+        .check {
+            color: #059669;
+            font-size: 24px;
+        }
+        
+        .cross {
+            color: #dc2626;
+            font-size: 24px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            background: #1f2937;
+            color: #9ca3af;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero h2 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .problems-grid,
+            .services-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Mobile comparison table */
+            .comparison-table {
+                box-shadow: none;
+            }
+            
+            .comparison-header {
+                display: none;
+            }
+            
+            .comparison-row {
+                display: block;
+                background: white !important;
+                margin-bottom: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                border: 1px solid #e5e7eb;
+            }
+            
+            .comparison-cell {
+                display: block;
+                padding: 12px 20px;
+                border-bottom: 1px solid #f3f4f6;
+            }
+            
+            .comparison-cell:last-child {
+                border-bottom: none;
+            }
+            
+            .comparison-cell:first-child {
+                background: #f9fafb;
+                font-weight: 600;
+                border-bottom: 2px solid #e5e7eb;
+            }
+            
+            .comparison-cell:nth-child(2)::before {
+                content: "Agentur: ";
+                font-weight: 600;
+                color: #6b7280;
+            }
+            
+            .comparison-cell:nth-child(3)::before {
+                content: "Mit mir: ";
+                font-weight: 600;
+                color: #667eea;
+            }
+            
+            .cta h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                    <img src="./media/profile_image.jpeg" alt="Your Name" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"> -->
+
+                <div class="header-text">
+                    <h1>Shopware 6 Support & Entwicklung</h1>
+                    <p class="subtitle">4 Jahre Shopware 6 Expertise | Full-Stack Senior Developer | 4 führende Agenturen Erfahrung</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Warum eine ganze Agentur bezahlen?<br><span class="highlight">Meistens macht eh ein Entwickler die Arbeit.</span></h2>
+            <p>Realität in Agenturen: Ein Senior Developer trifft die Entscheidungen und macht den Großteil der Arbeit. Der Rest ist Overhead. Warum nicht gleich direkt zusammenarbeiten?</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">30-40%</span>
+                    <span class="stat-label">Kostenersparnis</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">€90/h</span>
+                    <span class="stat-label">Transparenter Stundensatz</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24-48h</span>
+                    <span class="stat-label">Reaktionszeit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">Typische Shopware 6 Probleme</h2>
+            
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3>🐛 Bugs & Performance-Probleme</h3>
+                    <p>Langsame Ladezeiten, Fehler im Checkout, Plugin-Konflikte – Ihr Shop verliert Kunden und Umsatz.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <h3>⚙️ Fehlende DevOps-Expertise</h3>
+                    <p>Deployment-Probleme, fehlerhafte Server-Konfiguration, keine CI/CD Pipeline – Releases sind kompliziert und riskant.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <h3>🔌 Plugin-Anpassungen notwendig</h3>
+                    <p>Standard-Plugins erfüllen nicht Ihre Anforderungen. Custom-Entwicklung ist teuer und dauert bei Agenturen Wochen.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <h3>💸 Sie zahlen für's ganze Team – nutzen aber nur einen</h3>
+                    <p>PM koordiniert, Designer macht Mockups, aber entwickelt wird am Ende von einem Dev. Lohnt sich das wirklich?</p>
+                </div>
+                
+                <div class="problem-card">
+                    <h3>⏰ Lange Wartezeiten</h3>
+                    <p>Ihr Ticket hat bei der Agentur keine Priorität. Kritische Bugs bleiben tagelang ungelöst.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <h3>🔄 Keine kontinuierliche Wartung</h3>
+                    <p>Updates werden aufgeschoben, technische Schulden häufen sich – bis zum nächsten großen Problem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Meine Leistungen</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Shopware 6 Support & Bugfixing</h3>
+                    <ul>
+                        <li>Performance-Optimierung</li>
+                        <li>Fehleranalyse & Debugging</li>
+                        <li>Plugin-Konflikt-Lösung</li>
+                        <li>Checkout & Payment Fixes</li>
+                        <li>24-48h Reaktionszeit</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>DevOps & Infrastruktur</h3>
+                    <ul>
+                        <li>Server-Setup & Optimierung</li>
+                        <li>CI/CD Pipeline Implementierung</li>
+                        <li>Docker & Kubernetes Setup</li>
+                        <li>Monitoring & Logging (Sentry, NewRelic)</li>
+                        <li>Deployment-Automatisierung</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>Plugin-Entwicklung</h3>
+                    <ul>
+                        <li>Custom Plugin-Entwicklung</li>
+                        <li>Plugin-Anpassungen</li>
+                        <li>API-Integrationen (ERP, PIM, CRM)</li>
+                        <li>Payment & Shipping Provider</li>
+                        <li>Shopware 6.5+ Best Practices</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📅</div>
+                    <h3>Monatliche Wartung & Retainer</h3>
+                    <ul>
+                        <li>Regelmäßige Updates & Security Patches</li>
+                        <li>Proaktives Monitoring</li>
+                        <li>Backup-Management</li>
+                        <li>Monatliche Stundenkontingente</li>
+                        <li>Planbare Kosten, schnelle Reaktion</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">4 Jahre Shopware 6 | 4 führende Agenturen</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto 50px; text-align: center;">
+                <p style="font-size: 18px; color: #4b5563; line-height: 1.8;">
+                    Ich war 4 Jahre lang genau der Typ, der in Agenturen die eigentliche Arbeit macht: <strong>Bugs fixen, Features bauen, 
+                    Server aufsetzen, Deployments durchziehen</strong>. Bei 4 verschiedenen Shopware-Agenturen. 
+                    Jetzt können Sie direkt mit mir arbeiten – gleiche Qualität, nur ohne dass Sie für Büros und Vertriebsteams mitbezahlen.
+                </p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>🏢 Agentur-Know-how, ohne Agentur-Theater</h3>
+                    <p>Ich kenne die Prozesse der großen Agenturen. Aber ohne endlose Meetings und Ticket-Pingpong.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>⚙️ Alles aus einer Hand</h3>
+                    <p>Backend, Frontend, Server – ich mach alles selbst. Bei Agenturen braucht's dafür 3 Leute. Mehr Koordination, mehr Kosten.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>🎯 Ich kenne Shopware 6 in- und auswendig</h3>
+                    <p>4 Jahre nur Shopware 6. Jeden Tag. Ich kenne die Bugs bevor sie passieren und weiß wo die Leichen begraben sind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" style="background: #f9fafb;">
+        <div class="container">
+            <h2 class="section-title">Direkt zum Entwickler – Ohne Agentur-Zwischenschicht</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>💰 Gleiche Skills, halber Preis</h3>
+                    <p>Bei Agenturen sitzt auch ein Senior Dev an Ihrem Projekt – nur dass Sie €120-150/h zahlen statt €90/h. Der Rest? Overhead.</p>
+                    <span class="savings">Spart: €3.000-5.000/Monat</span>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>🚀 Moderne Technologien</h3>
+                    <p>AI-Tools (Cursor, GitHub Copilot), moderne DevOps-Praktiken, Docker, CI/CD. Agenturen nutzen oft veraltete Workflows.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>⚡ Schneller, weil direkter</h3>
+                    <p>Kein "Ich frag mal den PM, der fragt den Dev, der antwortet nächste Woche". Direkt schreiben, direkt Antwort, direkt gelöst.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>🎯 Ihr Projekt hat Priorität</h3>
+                    <p>Bei Agenturen? "Sorry, der große Kunde geht vor." Bei mir: Ich arbeite an Ihrem Projekt, fertig. 24-48h Reaktionszeit, garantiert.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>🎯 Für mittlere Shops reicht ein guter Dev</h3>
+                    <p>Ehrlich: Für Wartung und Features brauchen Sie kein 10-Mann-Team. Ein erfahrener Entwickler schafft das locker.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>👤 Eine Person, alles dabei</h3>
+                    <p>Backend, Frontend, DevOps – ich mach's komplett. Kein Hin-und-Her zwischen 4 Abteilungen. Einfach effizienter.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>📊 Klare Rechnung, keine Überraschungen</h3>
+                    <p>Stundensatz €90. Stundenzettel. Fertig. Keine versteckten "Projektmanagement-Pauschalen" oder "Setup-Fees".</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison">
+        <div class="container">
+            <h2 class="section-title">Agentur vs. Freelancer</h2>
+            
+            <div class="comparison-table">
+                <div class="comparison-row comparison-header">
+                    <div class="comparison-cell"></div>
+                    <div class="comparison-cell">Agentur</div>
+                    <div class="comparison-cell">Mit mir</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Stundensatz</strong></div>
+                    <div class="comparison-cell">€120-150/h</div>
+                    <div class="comparison-cell">€90/h</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Reaktionszeit</strong></div>
+                    <div class="comparison-cell">3-7 Tage</div>
+                    <div class="comparison-cell">24-48h</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Direkter Entwickler-Kontakt</strong></div>
+                    <div class="comparison-cell"><span class="cross">✗</span></div>
+                    <div class="comparison-cell"><span class="check">✓</span></div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Full-Stack Kompetenz</strong></div>
+                    <div class="comparison-cell">Mehrere Personen</div>
+                    <div class="comparison-cell">Eine Person</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Moderne AI-Tools</strong></div>
+                    <div class="comparison-cell"><span class="cross">✗</span></div>
+                    <div class="comparison-cell"><span class="check">✓</span></div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Kommunikations-Overhead</strong></div>
+                    <div class="comparison-cell">PM, Tickets, Meetings</div>
+                    <div class="comparison-cell">Direkt & schnell</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Abrechnung</strong></div>
+                    <div class="comparison-cell">Feste Pakete</div>
+                    <div class="comparison-cell">Stündlich, transparent</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Lust auf direkten Draht zum Dev?</h2>
+            <p>30 Min Erstgespräch, kostenlos. Kein Sales-Talk – wir reden technisch und schauen ob's passt.</p>
+            
+            <div class="cta-buttons">
+                <a href="https://calendly.com/ntolstoukhov/30min" class="btn btn-primary">📅 Termin vereinbaren</a>
+                <a href="https://www.linkedin.com/in/nikita-tolstoukhov-a0ab262a7/" class="btn btn-secondary" target="_blank">LinkedIn Profil</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Shopware Services | <a href="mailto:ntolstoukhov@gmail.com">ntolstoukhov@gmail.com</a></p>
+            <p style="margin-top: 10px; font-size: 14px;">
+                <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
