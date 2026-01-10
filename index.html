@@ -116,10 +116,10 @@
             margin-top: 8px;
         }
         
-        /* Problem Section */
-        .problem {
+        /* Services Section */
+        .services {
             padding: 80px 0;
-            background: #ffffff;
+            background: #f9fafb;
         }
         
         .section-title {
@@ -128,38 +128,6 @@
             text-align: center;
             margin-bottom: 50px;
             color: #1a1a1a;
-        }
-        
-        .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-        
-        .problem-card {
-            background: #fef2f2;
-            border-left: 4px solid #ef4444;
-            padding: 24px;
-            border-radius: 8px;
-        }
-        
-        .problem-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            color: #991b1b;
-            margin-bottom: 10px;
-        }
-        
-        .problem-card p {
-            color: #6b7280;
-            font-size: 16px;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background: #f9fafb;
         }
         
         .services-grid {
@@ -209,6 +177,128 @@
             font-weight: 600;
         }
         
+        /* Portfolio Section */
+        .portfolio {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .portfolio-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        
+        .portfolio-image {
+            position: relative;
+            height: 220px;
+            background: #f3f4f6;
+            overflow: hidden;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-image img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(102, 126, 234, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: 2px solid white;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        
+        .portfolio-link:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        .portfolio-content {
+            padding: 30px;
+        }
+        
+        .portfolio-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .tag {
+            background: #ede9fe;
+            color: #6d28d9;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .portfolio-content p {
+            color: #4b5563;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        
+        .portfolio-tech {
+            font-size: 14px;
+            color: #6b7280;
+            padding-top: 16px;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .portfolio-tech strong {
+            color: #1a1a1a;
+        }
+        
         /* Benefits Section */
         .benefits {
             padding: 80px 0;
@@ -248,59 +338,59 @@
             display: block;
         }
         
-        /* Comparison */
-        .comparison {
-            padding: 80px 0;
-            background: #f9fafb;
-        }
-        
-        .comparison-table {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        
-        .comparison-row {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        
-        .comparison-row:last-child {
-            border-bottom: none;
-        }
-        
-        .comparison-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            font-weight: 600;
-            font-size: 18px;
-        }
-        
-        .comparison-cell {
-            padding: 20px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .comparison-row:nth-child(even) {
-            background: #f9fafb;
-        }
-        
-        .check {
-            color: #059669;
-            font-size: 24px;
-        }
-        
-        .cross {
-            color: #dc2626;
-            font-size: 24px;
-        }
-        
-        /* CTA Section */
+        /* Comparison Table */
+    .comparison {
+        padding: 80px 0;
+        background: #f9fafb;
+    }
+    
+    .comparison-table {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    
+    .comparison-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .comparison-row:last-child {
+        border-bottom: none;
+    }
+    
+    .comparison-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        font-weight: 600;
+        font-size: 18px;
+    }
+    
+    .comparison-cell {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .comparison-row:nth-child(even) {
+        background: #f9fafb;
+    }
+    
+    .check {
+        color: #059669;
+        font-size: 24px;
+    }
+    
+    .cross {
+        color: #dc2626;
+        font-size: 24px;
+    }
+    
+    /* CTA Section */
         .cta {
             padding: 80px 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -398,8 +488,8 @@
                 gap: 30px;
             }
             
-            .problems-grid,
             .services-grid,
+            .portfolio-grid,
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
@@ -461,7 +551,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                    <a href="https://www.linkedin.com/in/nikita-tolstoukhov-a0ab262a7/"><img src="./media/profile_image.jpeg" alt="" style="width: 140px; height: 140px; object-fit: cover; border-radius: 50%;"></a>
+                    <a href="https://bit.ly/ntolstoukhov"><img src="./media/profile_image.jpeg" alt="" style="width: 140px; height: 140px; object-fit: cover; border-radius: 50%;"></a>
                 <div class="header-text">
                     <h1>Shopware 6 Support & Entwicklung</h1>
                     <p class="subtitle">4 Jahre Shopware 6 Expertise | Full-Stack Senior Developer | 4 führende Agenturen Erfahrung</p>
@@ -488,45 +578,6 @@
                 <div class="stat">
                     <span class="stat-number">24-48h</span>
                     <span class="stat-label">Reaktionszeit</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="problem">
-        <div class="container">
-            <h2 class="section-title">Typische Shopware 6 Probleme</h2>
-            
-            <div class="problems-grid">
-                <div class="problem-card">
-                    <h3>🐛 Bugs & Performance-Probleme</h3>
-                    <p>Langsame Ladezeiten, Fehler im Checkout, Plugin-Konflikte – Ihr Shop verliert Kunden und Umsatz.</p>
-                </div>
-                
-                <div class="problem-card">
-                    <h3>⚙️ Fehlende DevOps-Expertise</h3>
-                    <p>Deployment-Probleme, fehlerhafte Server-Konfiguration, keine CI/CD Pipeline – Releases sind kompliziert und riskant.</p>
-                </div>
-                
-                <div class="problem-card">
-                    <h3>🔌 Plugin-Anpassungen notwendig</h3>
-                    <p>Standard-Plugins erfüllen nicht Ihre Anforderungen. Custom-Entwicklung ist teuer und dauert bei Agenturen Wochen.</p>
-                </div>
-                
-                <div class="problem-card">
-                    <h3>💸 Sie zahlen für's ganze Team – nutzen aber nur einen</h3>
-                    <p>PM koordiniert, Designer macht Mockups, aber entwickelt wird am Ende von einem Dev. Lohnt sich das wirklich?</p>
-                </div>
-                
-                <div class="problem-card">
-                    <h3>⏰ Lange Wartezeiten</h3>
-                    <p>Ihr Ticket hat bei der Agentur keine Priorität. Kritische Bugs bleiben tagelang ungelöst.</p>
-                </div>
-                
-                <div class="problem-card">
-                    <h3>🔄 Keine kontinuierliche Wartung</h3>
-                    <p>Updates werden aufgeschoben, technische Schulden häufen sich – bis zum nächsten großen Problem.</p>
                 </div>
             </div>
         </div>
@@ -589,6 +640,92 @@
         </div>
     </section>
 
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Ausgewählte Projekte</h2>
+            <p style="text-align: center; font-size: 18px; color: #6b7280; max-width: 750px; margin: 0 auto 60px;">
+                Einblicke in meine Shopware 6 Arbeit – von komplexen Migrations-Projekten bis zu maßgeschneiderten E-Commerce-Lösungen. 
+                <strong>Dies ist nur eine kleine Auswahl meiner Projekte.</strong> Gerne stelle ich Ihnen weitere Referenzen im persönlichen Gespräch vor.
+            </p>
+            
+            <div class="portfolio-grid">
+                <!-- Wero.de -->
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="./media/wero-screenshot.jpg" alt="Wero.de Shopware Project" />
+                        <div class="portfolio-overlay">
+                            <a href="https://bit.ly/wero-de" target="_blank" class="portfolio-link">Webseite besuchen →</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Wero.de</h3>
+                        <div class="portfolio-tags">
+                            <span class="tag">Migration</span>
+                            <span class="tag">Custom Theme</span>
+                            <span class="tag">Plugin Development</span>
+                        </div>
+                        <p>Komplette Shopware 6.2 → 6.6 Migration mit Übertragung aller Custom-Logiken und Plugins. Vollständiges Frontend-Redesign mit neuem Theme implementiert.</p>
+                    </div>
+                </div>
+
+                <!-- Calumet.de -->
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="./media/calumet-screenshot.jpg" alt="Calumet.de Gebrauchtwaren System" />
+                        <div class="portfolio-overlay">
+                            <a href="https://bit.ly/calumet-de" target="_blank" class="portfolio-link">Webseite besuchen →</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Calumet.de</h3>
+                        <div class="portfolio-tags">
+                            <span class="tag">Custom Logic</span>
+                            <span class="tag">Variant System</span>
+                        </div>
+                        <p>Entwicklung einer erweiterten Varianten-Logik für Gebrauchtwaren. Kunden können zwischen verschiedenen Zustandskategorien (Wie neu, Sehr gut, Gut, Akzeptabel) mit dynamischer Preisgestaltung und Verfügbarkeitsanzeige wählen.</p>
+                    </div>
+                </div>
+
+                <!-- Stabilezelte.de -->
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="./media/stabilezelte-screenshot.jpg" alt="Stabilezelte.de Migration" />
+                        <div class="portfolio-overlay">
+                            <a href="https://bit.ly/455pwve" target="_blank" class="portfolio-link">Webseite besuchen →</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Stabilezelte.de</h3>
+                        <div class="portfolio-tags">
+                            <span class="tag">Major Migration</span>
+                            <span class="tag">Legacy System</span>
+                        </div>
+                        <p>Shopware 6.1 → 6.6 Update-Projekt mit vollständiger Überführung von Custom-Logiken und Plugin-Anpassungen. Migration von Legacy-System auf moderne Shopware-Architektur.</p>
+                    </div>
+                </div>
+
+                <!-- Fradashop.de -->
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="./media/fradashop-screenshot.jpg" alt="Fradashop.de Wartung" />
+                        <div class="portfolio-overlay">
+                            <a href="https://bit.ly/4pAjCtw" target="_blank" class="portfolio-link">Webseite besuchen →</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Fradashop.de</h3>
+                        <div class="portfolio-tags">
+                            <span class="tag">Monatliche Wartung</span>
+                            <span class="tag">Full-Service</span>
+                        </div>
+                        <p>Kontinuierliche monatliche Wartung und Full-Service-Betreuung. Frontend- und Backend-Entwicklung, DevOps-Management, Performance-Optimierung und Feature-Implementierung.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Experience Section -->
     <section class="benefits">
         <div class="container">
@@ -621,55 +758,10 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits" style="background: #f9fafb;">
-        <div class="container">
-            <h2 class="section-title">Direkt zum Entwickler – Ohne Agentur-Zwischenschicht</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h3>💰 Gleiche Skills, halber Preis</h3>
-                    <p>Bei Agenturen sitzt auch ein Senior Dev an Ihrem Projekt – nur dass Sie €120-150/h zahlen statt €90/h. Der Rest? Overhead.</p>
-                    <span class="savings">Spart: €3.000-5.000/Monat</span>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>🚀 Moderne Technologien</h3>
-                    <p>AI-Tools (Cursor, GitHub Copilot), moderne DevOps-Praktiken, Docker, CI/CD. Agenturen nutzen oft veraltete Workflows.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>⚡ Schneller, weil direkter</h3>
-                    <p>Kein "Ich frag mal den PM, der fragt den Dev, der antwortet nächste Woche". Direkt schreiben, direkt Antwort, direkt gelöst.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>🎯 Ihr Projekt hat Priorität</h3>
-                    <p>Bei Agenturen? "Sorry, der große Kunde geht vor." Bei mir: Ich arbeite an Ihrem Projekt, fertig. 24-48h Reaktionszeit, garantiert.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>🎯 Für mittlere Shops reicht ein guter Dev</h3>
-                    <p>Ehrlich: Für Wartung und Features brauchen Sie kein 10-Mann-Team. Ein erfahrener Entwickler schafft das locker.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>👤 Eine Person, alles dabei</h3>
-                    <p>Backend, Frontend, DevOps – ich mach's komplett. Kein Hin-und-Her zwischen 4 Abteilungen. Einfach effizienter.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>📊 Klare Rechnung, keine Überraschungen</h3>
-                    <p>Stundensatz €90. Stundenzettel. Fertig. Keine versteckten "Projektmanagement-Pauschalen" oder "Setup-Fees".</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Comparison Section -->
     <section class="comparison">
         <div class="container">
-            <h2 class="section-title">Agentur vs. Freelancer</h2>
+            <h2 class="section-title">Direkt zum Entwickler – Ohne Agentur-Zwischenschicht</h2>
             
             <div class="comparison-table">
                 <div class="comparison-row comparison-header">
@@ -685,40 +777,46 @@
                 </div>
                 
                 <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Monatliche Kosten (Beispiel)</strong></div>
+                    <div class="comparison-cell">€8.000-12.000</div>
+                    <div class="comparison-cell">€5.000-7.000</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-cell"><strong>Technologie-Stack</strong></div>
+                    <div class="comparison-cell">Oft veraltet</div>
+                    <div class="comparison-cell">AI-Tools, moderne DevOps</div>
+                </div>
+                
+                <div class="comparison-row">
                     <div class="comparison-cell"><strong>Reaktionszeit</strong></div>
                     <div class="comparison-cell">3-7 Tage</div>
                     <div class="comparison-cell">24-48h</div>
                 </div>
                 
                 <div class="comparison-row">
-                    <div class="comparison-cell"><strong>Direkter Entwickler-Kontakt</strong></div>
-                    <div class="comparison-cell"><span class="cross">✗</span></div>
-                    <div class="comparison-cell"><span class="check">✓</span></div>
+                    <div class="comparison-cell"><strong>Priorisierung</strong></div>
+                    <div class="comparison-cell">Je nach Kunde</div>
+                    <div class="comparison-cell">Garantierte Priorität</div>
                 </div>
                 
                 <div class="comparison-row">
-                    <div class="comparison-cell"><strong>Full-Stack Kompetenz</strong></div>
-                    <div class="comparison-cell">Mehrere Personen</div>
-                    <div class="comparison-cell">Eine Person</div>
-                </div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell"><strong>Moderne AI-Tools</strong></div>
-                    <div class="comparison-cell"><span class="cross">✗</span></div>
-                    <div class="comparison-cell"><span class="check">✓</span></div>
-                </div>
-                
-                <div class="comparison-row">
-                    <div class="comparison-cell"><strong>Kommunikations-Overhead</strong></div>
-                    <div class="comparison-cell">PM, Tickets, Meetings</div>
+                    <div class="comparison-cell"><strong>Kommunikation</strong></div>
+                    <div class="comparison-cell">PM → Tickets → Dev</div>
                     <div class="comparison-cell">Direkt & schnell</div>
                 </div>
                 
                 <div class="comparison-row">
                     <div class="comparison-cell"><strong>Abrechnung</strong></div>
-                    <div class="comparison-cell">Feste Pakete</div>
-                    <div class="comparison-cell">Stündlich, transparent</div>
+                    <div class="comparison-cell">Feste Pakete + Hidden Fees</div>
+                    <div class="comparison-cell">Transparent, nur Stunden</div>
                 </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 18px; color: #059669; font-weight: 600;">
+                    💰 Durchschnittliche Ersparnis: €3.000-5.000 pro Monat
+                </p>
             </div>
         </div>
     </section>
@@ -731,7 +829,7 @@
             
             <div class="cta-buttons">
                 <a href="https://calendly.com/ntolstoukhov/30min" class="btn btn-primary">📅 Termin vereinbaren</a>
-                <a href="https://www.linkedin.com/in/nikita-tolstoukhov-a0ab262a7/" class="btn btn-secondary" target="_blank">LinkedIn Profil</a>
+                <a href="https://bit.ly/ntolstoukhov" class="btn btn-secondary" target="_blank">LinkedIn Profil</a>
             </div>
         </div>
     </section>
